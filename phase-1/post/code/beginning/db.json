@@ -1,0 +1,38 @@
+{
+  "candies": [
+    {
+      "id": "1",
+      "name": "Skittles",
+      "chocolate": false
+    },
+    {
+      "id": "2",
+      "name": "Starburst",
+      "chocolate": false
+    },
+    {
+      "id": "9186",
+      "name": "reeses",
+      "chocolate": true
+    },
+    {
+      "id": "a189",
+      "name": "peanut butter cups",
+      "chocolate": true
+    }
+  ],
+  "cookies": [
+    {
+      "id": "1",
+      "name": "Subway"
+    },
+    {
+      "id": "2",
+      "name": "Tate's"
+    },
+    {
+      "id": "3",
+      "name": "Oreo"
+    }
+  ]
+}

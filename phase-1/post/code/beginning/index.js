@@ -13,10 +13,47 @@ Objectives
 */
 
 // Let's try making a GET request to display existing data on the page.
+fetch("http://localhost:3000/")
+.then(response => response.json())
+.then(candies => {
+    console.log(candies);
+})
+.catch(error => console.log(error));
+
+fetch("http://localhost:3000/cookies/2")
+.then(response => response.json())
+.then(cookie => {
+    console.log(cookie);
+})
+.catch(error => console.log(error));
 
 // Now, let's trigger a POST request when the user submits the form,
 // so that they can add data to the database! Remember to think about
 // the event, the target, and the handler when planning a listener.
+document.querySelector("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const newCandy = {
+        name : event.target["name"].value,
+        chocolate : event.target["chocolate"].checked
+
+    }
+    fetch("http://localhost:3000/candies", {
+        method: "POST",
+        headers: {
+            // We're sending JSON to the db...
+            "Content-Type": "application/json",
+            //... and we're expecting a copy of the JSON back as confirmation.
+            "Accept": "application/json"
+        },
+        body: JSON.stringify(newCandy)
+    })
+    .then(response => response.json())
+    .then(newCandyInDb => {
+        console.log(newCandyInDb);
+    })
+});
+
+
 
 
 // ~ Challenges
